@@ -2,4 +2,4 @@ In the breadcrumbs CSS, when you have the Back button activated and you change t
 
 At the bottom of the page https://orangecss.com/docs/components/custom/avatar, in the table, in the last "Possible values" column, you have a text that says "See Colors page". When you click on "Colors", it goes to a 404 page which is: https://orangecss.com/colors instead of the right one: https://orangecss.com/docs/global
 
-Same thing happen with the links in the table at the end of the Button page: https://orangecss.com/docs/components/basic/button
+Same thing happens with the links in the table at the end of the Button page: https://orangecss.com/docs/components/basic/button
