@@ -25,6 +25,6 @@ import React from 'react'
 export default function CardBody (props) {
     let className = "card__body"
     return (
-        <div className={className}>{props.children}</div>
+        <div className={className} {...props}>{props.children}</div>
     )
 }

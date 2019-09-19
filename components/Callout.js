@@ -23,7 +23,7 @@ export default function Callout (props) {
     if (props.shadow && props.shadow != 'false') className += ` callout--shadow`
     if (props.action && props.action != 'false') className += ` callout--action`
     return (
-        <div className={className}>
+        <div className={className} {...props}>
             {props.children}
         </div>
     )

@@ -39,7 +39,7 @@ export default function BreadcrumbsItem (props) {
     if (props.iconClass) icon = <span className={props.iconClass}></span>
     if (props.active && props.active != 'false') className += "is-active"
     return (
-        <li>
+        <li {...props}>
             <Link to={props.to} className={className}>
                 {icon}
                 {props.back ? 'Back' : props.content}

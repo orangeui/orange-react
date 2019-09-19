@@ -3,7 +3,7 @@
  *     <Avatar [all-optional-attributes] />
  *
  * Attributes:
- *     circle OR circle="true" (omit cicle if you don't need it)
+ *     circle="true" OR circle="false" (omit cicle if you don't need it)
  *     size="small" OR size="large" OR size="auto"
  *     color="your-color-name"
  *
@@ -16,6 +16,7 @@ import React from 'react'
 
 export default function Avatar (props) {
     let className = "avatar"
+    console.log(props.circle)
     if (props.circle && props.circle != 'false') className += " avatar--circle"
     if (props.size) {
         switch (props.size) {
@@ -32,7 +33,7 @@ export default function Avatar (props) {
     }
     if (props.color) className += ` avatar--color-${props.color}`
     return (
-        <div className={className}>
+        <div className={className} {...props}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="80"

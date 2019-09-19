@@ -50,7 +50,7 @@ export default function Breadcrumbs (props) {
     if (props.fullWidth && props.fullWidth != 'false') className += " breadcrumbs--full"
     if (props.color) className += ` breadcrumbs--color-${props.color}`
     return (
-        <nav className={className}>
+        <nav className={className} {...props}>
             {backButton}
 
             <ul>

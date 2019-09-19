@@ -25,6 +25,6 @@ import React from 'react'
 export default function CardHeader (props) {
     let className = "card__header"
     return (
-        <div className={className}>{props.children}</div>
+        <div className={className} {...props}>{props.children}</div>
     )
 }

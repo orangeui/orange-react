@@ -17,7 +17,7 @@
  *         <CardBody>
  *             This is the card body.
  *         </CardBody>
- *          <CardFooter>
+ *          <CardFooter clickable onClick={e => console.log('The footer has been clicked')}>
  *             This is the card footer
  *         </CardFooter>
  *     </Card>
@@ -29,6 +29,6 @@ export default function CardFooter (props) {
     let className = "card__footer"
     if (props.clickable && props.clickable != 'false') className += " card__footer--click"
     return (
-        <div className={className}>{props.children}</div>
+        <div className={className} onClick={e => props.onClick(e)} {...props}>{props.children}</div>
     )
 }

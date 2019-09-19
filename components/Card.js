@@ -32,6 +32,6 @@ export default function Card (props) {
     let className = "card"
     if (props.full && props.full != 'false') className += " card--full"
     return (
-        <div className={className}>{props.children}</div>
+        <div className={className} {...props}>{props.children}</div>
     )
 }

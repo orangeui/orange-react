@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import Icon from '../components/Icon'
+import Avatar from '../components/Avatar'
 
 class App extends Component {
     constructor () {
@@ -9,20 +9,26 @@ class App extends Component {
 
     render () {
         return (
-            <div style={{width: 900, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "auto"}}>
+            <div style={{width: 500, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "30px auto"}}>
+                <Avatar />
+                <Avatar circle="true" />
+
+                <br/>
+
+                <Avatar circle="true" size="small"/>
+                <Avatar circle="true" size="large"/>
+                <Avatar circle="true" size="auto"/>
+
+                <Avatar size="small"/>
+                <Avatar size="large"/>
+                <Avatar size="auto"/>
+
+                <Avatar size="small" color="red"/>
+                <Avatar size="large" color="blue"/>
+                <Avatar size="auto" color="secondary"/>
             </div>
         )
     }
-}
-
-export default function Input (props) {
-    return (
-        <div className="form__item">
-            <input id={props.id} type="text" name="form_id" placeholder="Label" className="form__input" />
-            <label htmlFor={props.id} className="form__label">{props.label}</label>
-            <p className="form__description">{props.description}</p>
-        </div>
-    )
 }
 
 render(<App />, document.querySelector('#root'))

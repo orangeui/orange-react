@@ -9,7 +9,7 @@ class App extends Component {
 
     render () {
         return (
-            <div style={{width: 900, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "auto"}}>
+            <div style={{width: 900, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "30px auto"}}>
                 <Button>Press me</Button>
                 <Button
                     role="secondary"

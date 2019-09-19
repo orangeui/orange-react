@@ -15,7 +15,7 @@ class App extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route path="/" exact render={() => (
-                        <div style={{width: 900, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "auto"}}>
+                        <div style={{width: 900, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "30px auto"}}>
                             <Breadcrumbs
                                 fullWidth
                                 backTo="/"

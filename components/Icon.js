@@ -18,6 +18,6 @@ export default function Icon (props) {
     if (props.color) className = `color-${props.color}`
     if (props.symbol) className += ` icon-${props.symbol}`
     return (
-        <span className={className}></span>
+        <span className={className} {...props}></span>
     )
 }

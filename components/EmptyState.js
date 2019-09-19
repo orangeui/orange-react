@@ -26,7 +26,7 @@ import React from 'react'
 
 export default function EmptyState (props) {
     return (
-        <div className={props['no-gutter'] && props['no-gutter'] != 'false' ? "empty-state empty-state--no-gutter" : "empty-state"}>
+        <div className={props['no-gutter'] && props['no-gutter'] != 'false' ? "empty-state empty-state--no-gutter" : "empty-state"} {...props}>
             <div className="empty-state__content">
                 <div className="empty-state__title">
                     <h2>{props.title}</h2>

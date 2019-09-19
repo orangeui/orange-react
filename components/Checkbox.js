@@ -11,7 +11,11 @@
  *
  * Examples:
  *     <Checkbox id="example">Example checkbox</Checkbox>
- *     <Checkbox id="example2" checked>Checked checkbox</Checkbox>
+ *     <Checkbox
+ *         id="example2"
+ *         onChange={e => console.log(e.target.value)}
+ *     >Example checkbox</Checkbox>
+ *     <Checkbox id="example3" checked>Checked checkbox</Checkbox>
  *     <Checkbox id="exampleX" disabled>Disabled checkbox</Checkbox>
  */
 
@@ -30,7 +34,7 @@ export default class Checkbox extends React.Component {
         let disabled = false
         if (this.props.disabled && this.props.disabled != 'false') disabled = true
         return (
-            <div className="checkbox">
+            <div className="checkbox" {...props}>
                 <input type="checkbox" disabled={disabled} id={this.props.id} onChange={e => {
                     if (this.state.checkedSetInitially) {
                         this.setState({checked: !this.state.checked})

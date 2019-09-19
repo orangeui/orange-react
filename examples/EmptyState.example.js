@@ -10,7 +10,7 @@ class App extends Component {
 
     render () {
         return (
-            <div style={{width: 900, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "auto"}}>
+            <div style={{width: 900, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "30px auto"}}>
                 <EmptyState
                     title="It's your first time here"
                     description="A short explanation of this view or why it is empty. Longer texts span into multiple lines"

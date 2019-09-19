@@ -14,6 +14,7 @@
  *
  * Examples:
  *     <Button></Button>
+ *     <Button onClick={e => console.log(e.target.value)}></Button>
  *     <Button role="secondary"></Button>
  *     <Button role="secondary basic">Press me</Button>
  *     <Button size="large"></Button>
@@ -43,8 +44,15 @@ export default function Button (props) {
     if (props.iconOnly && props.iconOnly != 'false') className += ` button--icon-only`
 
     return (
-        <button type={props.type} disabled={props.disabled && props.disabled != 'false'} className={className}>
-            {props.children}
+        <button
+            type={props.type || 'button'}
+            disabled={props.disabled && props.disabled != 'false'}
+            className={className}
+            onClick={e => {
+                if(props.onClick) props.onClick(e)
+            }}
+            {...props}>
+                {props.children}
         </button>
     )
 }

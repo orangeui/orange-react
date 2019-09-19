@@ -9,15 +9,15 @@ class App extends Component {
 
     render () {
         return (
-            <div style={{width: 500, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "auto"}}>
+            <div style={{width: 500, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "30px auto"}}>
                 <Avatar />
-                <Avatar circle/>
+                <Avatar circle="true" />
 
                 <br/>
 
-                <Avatar circle size="small"/>
-                <Avatar circle size="large"/>
-                <Avatar circle size="auto"/>
+                <Avatar circle="true" size="small"/>
+                <Avatar circle="true" size="large"/>
+                <Avatar circle="true" size="auto"/>
 
                 <Avatar size="small"/>
                 <Avatar size="large"/>

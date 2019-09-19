@@ -6,7 +6,7 @@
  *             <li>Example 2</li>
  *             <li>Example 3</li>
  *             <li>Example 4</li>
- *             <li>Example 5</li>
+ *             <li onClick={// Do something when you click this}>Example 5</li>
  *         </Dropdown>
  *     </form>
  *
@@ -29,7 +29,7 @@ export default function Dropdown (props) {
     if (props.disabled && props.disabled != 'false') disabled = true
     return (
         <div className="form__item">
-            <div id={props.id} className={disabled ? "form-dropdown is-disabled" : "form-dropdown"}>
+            <div id={props.id} {...props} className={disabled ? "form-dropdown is-disabled" : "form-dropdown"}>
                 <label htmlFor={props.id} className="form-dropdown__label">{props.label}</label>
                 <input id={props.id} type="text" name="form_dropdown" className="form-dropdown__input" />
                 <div className="form-dropdown__text">{props.placeholder}</div>

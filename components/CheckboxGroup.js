@@ -27,7 +27,7 @@ import React from 'react'
 
 export default function CheckboxGroup (props) {
     return (
-        <div className="form__item">
+        <div className="form__item" {...props}>
             <div className="checkbox-group">
                 <div className="checkbox-group__label">{props.label}</div>
                 {props.children}
