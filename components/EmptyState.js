@@ -5,10 +5,12 @@
  *     </EmptyState>
  *
  * Attributes:
- *     no-gutter OR no-gutter="true"
+ *     noGutter OR noGutter="true"
  *     title="title"
  *     description="description"
  *     img="/images/empty-state.svg"
+ *     id="your-id"
+ *     className="your-custom-class"
  *
  * Examples:
  *     <EmptyState
@@ -21,12 +23,13 @@
  *     </EmptyState>
  */
 
-
 import React from 'react'
 
 export default function EmptyState (props) {
+    let className = props.className ? `empty-state ${props.className}` : 'empty-state'
+    if (props.noGutter && props.noGutter != 'false') className += " empty-state--no-gutter"
     return (
-        <div className={props['no-gutter'] && props['no-gutter'] != 'false' ? "empty-state empty-state--no-gutter" : "empty-state"} {...props}>
+        <div className={className} id={props.id}>
             <div className="empty-state__content">
                 <div className="empty-state__title">
                     <h2>{props.title}</h2>

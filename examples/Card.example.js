@@ -140,7 +140,7 @@ class App extends Component {
                     <CardBody>
                         This is the card body.
                     </CardBody>
-                    <CardFooter clickable>
+                    <CardFooter clickable onClick={e => console.log('Clicked')}>
                         Load more
                         <span className="icon-plus"></span>
                     </CardFooter>

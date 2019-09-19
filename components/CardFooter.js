@@ -8,6 +8,8 @@
  *
  * Attributes:
  *     clickable OR clickable="true" OR clickable="false"
+ *     id="your-id"
+ *     className="your-custom-class"
  *
  * Example:
  *     <Card>
@@ -26,9 +28,11 @@
 import React from 'react'
 
 export default function CardFooter (props) {
-    let className = "card__footer"
+    let className = props.className ? `card__footer ${props.className}` : "card__footer"
     if (props.clickable && props.clickable != 'false') className += " card__footer--click"
     return (
-        <div className={className} onClick={e => props.onClick(e)} {...props}>{props.children}</div>
+        <div className={className} id={props.id} onClick={e => {
+            if (props.onClick) props.onClick(e)
+        }}>{props.children}</div>
     )
 }

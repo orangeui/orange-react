@@ -11,13 +11,13 @@ class App extends Component {
     render () {
         return (
             <div style={{width: 900, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "30px auto"}}>
-                <Checkbox id="example">
+                <Checkbox id="example" onChange={(e, clicked) => console.log('Clicked example', clicked)}>
                     Example checkbox
                 </Checkbox>
 
                 <br/><br/>
 
-                <Checkbox id="exampleW" checked>
+                <Checkbox id="exampleW" checked onClick={(e, clicked) => console.log('Clicked example 2', clicked)}>
                     Checked checkbox
                 </Checkbox>
 

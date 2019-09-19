@@ -6,6 +6,7 @@
  *     readOnly OR readOnly="true" OR readOnly="false"
  *     name="your-input-name"
  *     id="your-id"
+ *     className="your-custom-class"
  *     type="your-type" (The default is type="text")
  *     onChange={() => {}} (Doesn't do anything by default unless you add it)
  *     label="your-label"
@@ -31,7 +32,7 @@
 import React from 'react'
 
 export default function Input (props) {
-    let inputClass = "form__input"
+    let inputClass = props.className ? `form__input ${props.className}` : "form__input"
     let readOnly = false
     let hasSides = false
     if (props.left || props.right) hasSides = true

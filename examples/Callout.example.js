@@ -13,7 +13,7 @@ class App extends Component {
                 <Callout><p>This is a callout</p></Callout>
                 <Callout color="green"><p>This is a callout</p></Callout>
                 <Callout shadow="true"><p>This is a callout</p></Callout>
-                <Callout action="true"><p>This is a callout</p></Callout>
+                <Callout action="true" onClick={e => console.log('Clicked')}><p>This is a callout</p></Callout>
                 <Callout color="red"><p>This is a callout</p></Callout>
                 <Callout shadow="false"><p>This is a callout</p></Callout>
             </div>

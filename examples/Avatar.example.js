@@ -11,7 +11,7 @@ class App extends Component {
         return (
             <div style={{width: 500, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "30px auto"}}>
                 <Avatar />
-                <Avatar circle="true" />
+                <Avatar circle="true" id="a" className="b" />
 
                 <br/>
 

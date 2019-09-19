@@ -8,6 +8,8 @@
  *
  * Attributes:
  *     full OR full="true" OR full="false"
+ *     id="your-id"
+ *     className="your-custom-class"
  *
  * The footer can have the property:
  *     clickable OR clickable="true" OR clickable="false"
@@ -29,9 +31,9 @@
 import React from 'react'
 
 export default function Card (props) {
-    let className = "card"
+    let className = props.className ? `card ${props.className}` : "card"
     if (props.full && props.full != 'false') className += " card--full"
     return (
-        <div className={className} {...props}>{props.children}</div>
+        <div className={className} id={props.id}>{props.children}</div>
     )
 }

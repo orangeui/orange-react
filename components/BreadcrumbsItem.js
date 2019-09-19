@@ -6,7 +6,9 @@
  *     to="/your-location" (REQUIRED, to specify where you'll go when clicked)
  *     content="Example"   (REQUIRED, the content inside the breadcrumb)
  *     active OR active="true" (Omit active if you don't want it to be active)
- *     iconClass="icon-integrations" (The <span class={iconClass}></span> shown if any)
+ *     icon="icon-integrations" (It will convert to <span class={icon}></span> if passed)
+ *     id="your-id"
+ *     className="your-custom-class"
  *
  * Requirements:
  *     - You need to use the BreadcrumbsItem as a direct child of <Breadcrumb></Breadcrumb>
@@ -24,7 +26,7 @@
  *         backTo="/"
  *         color="blue"
  *     >
- *         <BreadcrumbsItem content="Example" to="/example" iconClass="icon-integrations" />
+ *         <BreadcrumbsItem content="Example" to="/example" icon="icon-integrations" />
  *         <BreadcrumbsItem content="Another" to="/another" />
  *     </Breadcrumbs>
  */
@@ -34,13 +36,13 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 export default function BreadcrumbsItem (props) {
-    let className = ""
+    let className = props.className ? `${props.className}` : ""
     let icon = null
-    if (props.iconClass) icon = <span className={props.iconClass}></span>
+    if (props.icon) icon = <span className={props.icon}></span>
     if (props.active && props.active != 'false') className += "is-active"
     return (
-        <li {...props}>
-            <Link to={props.to} className={className}>
+        <li>
+            <Link to={props.to} id={props.id} className={className}>
                 {icon}
                 {props.back ? 'Back' : props.content}
             </Link>

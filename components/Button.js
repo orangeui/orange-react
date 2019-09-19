@@ -11,6 +11,8 @@
  *     inverted OR inverted="true"
  *     iconOnly OR iconOnly="true" (When all you have is an icon inside and want less padding)
  *     disabled OR disabled="true"
+ *     id="your-id"
+ *     className="your-custom-class"
  *
  * Examples:
  *     <Button></Button>
@@ -28,7 +30,7 @@
 import React from 'react'
 
 export default function Button (props) {
-    let className = 'button'
+    let className = props.className ? `button ${props.className}` : 'button'
     if (props.role && props.role.trim().split(' ').length > 0) {
         let roles = props.role.trim().split(' ')
         for (let i = 0; i < roles.length; i++) {
@@ -48,10 +50,10 @@ export default function Button (props) {
             type={props.type || 'button'}
             disabled={props.disabled && props.disabled != 'false'}
             className={className}
+            id={props.id}
             onClick={e => {
                 if(props.onClick) props.onClick(e)
-            }}
-            {...props}>
+            }}>
                 {props.children}
         </button>
     )

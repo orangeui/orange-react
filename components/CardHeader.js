@@ -6,6 +6,10 @@
  *         <CardFooter></CardFooter>
  *     </Card>
  *
+ * Attributes:
+ *     id="your-id"
+ *     className="your-custom-class"
+ *
  * Example:
  *     <Card>
  *         <CardHeader>
@@ -23,8 +27,8 @@
 import React from 'react'
 
 export default function CardHeader (props) {
-    let className = "card__header"
+    let className = props.className ? `card__header ${props.className}` : "card__header"
     return (
-        <div className={className} {...props}>{props.children}</div>
+        <div className={className} id={props.id}>{props.children}</div>
     )
 }

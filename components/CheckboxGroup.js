@@ -8,6 +8,8 @@
  * Attributes:
  *     label="your-label-text"
  *     description="your-group-description"
+ *     id="your-id"
+ *     className="your-custom-class"
  *
  * Example:
  *     <CheckboxGroup label="Group label" description="This is a group description">
@@ -27,7 +29,10 @@ import React from 'react'
 
 export default function CheckboxGroup (props) {
     return (
-        <div className="form__item" {...props}>
+        <div
+            className={props.className ? `form__item ${props.className}` : "form__item"}
+            id={props.id}
+        >
             <div className="checkbox-group">
                 <div className="checkbox-group__label">{props.label}</div>
                 {props.children}

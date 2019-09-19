@@ -6,6 +6,8 @@
  *     fullWidth OR fullWidth="true" (Omit fullWidth if you don't need it)
  *     backTo="/your-location" (Shows the Back button with the specified location)
  *     color="your-color-name"
+ *     id="your-id"
+ *     className="your-custom-class"
  *
  * Requirements:
  *     - You need to have at least one <BreadcrumbItem /> inside. Import it separately.
@@ -38,7 +40,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Breadcrumbs (props) {
-    let className = "breadcrumbs"
+    let className = props.className ? `breadcrumbs ${props.className}` : "breadcrumbs"
     let backButton = null
     if (props.backTo) {
         backButton = (
@@ -50,7 +52,7 @@ export default function Breadcrumbs (props) {
     if (props.fullWidth && props.fullWidth != 'false') className += " breadcrumbs--full"
     if (props.color) className += ` breadcrumbs--color-${props.color}`
     return (
-        <nav className={className} {...props}>
+        <nav className={className} id={props.id}>
             {backButton}
 
             <ul>
