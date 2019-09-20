@@ -3,3 +3,5 @@ In the breadcrumbs CSS, when you have the Back button activated and you change t
 At the bottom of the page https://orangecss.com/docs/components/custom/avatar, in the table, in the last "Possible values" column, you have a text that says "See Colors page". When you click on "Colors", it goes to a 404 page which is: https://orangecss.com/colors instead of the right one: https://orangecss.com/docs/global
 
 Same thing happens with the links in the table at the end of the Button page: https://orangecss.com/docs/components/basic/button
+
+Skipped the Modal component because it's importing "components/common/modals/CardDetailsModal", something not available in the repository. Same thing with the Docs component. If those are important, let me know and we can see if they can be implemented. It would be helpful to have them in the orangecss.com documentation page to get a better idea of how they should look like.
