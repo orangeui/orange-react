@@ -1,41 +1,37 @@
-import React, { Component, useState } from 'react'
-import { render } from 'react-dom'
+/**
+ * Usage:
+ *     <Toggle id="required-id" [other-optional-attributes] />
+ *
+ * Attributes:
+ *     id="your-id"
+ *     label="your-label"
+ *     size="large"
+ *     color="your-color"
+ *     enabledText="custom-on-message"
+ *     enabledText="custom-off-message"
+ *     className="your-custom-class"
+ *
+ * Examples:
+ *     <Toggle
+ *         id="one"
+ *         onChange={e => console.log(e.target.value)}
+ *     />
+ *
+ *     <Toggle
+ *         id="two"
+ *         label="Label text"
+ *     />
+ *
+ *     <Toggle
+ *         id="three"
+ *         label="Label text"
+ *         size="large"
+ *         enabledText="On"
+ *         disabledText="Off"
+ *     />
+ */
 
-class App extends Component {
-    constructor () {
-        super()
-    }
-
-    render () {
-        return (
-            <div style={{width: 900, border: "5px solid lightgrey", borderRadius: 20, padding: 50, margin: "30px auto"}}>
-                <Toggle
-                    id="one"
-                    onChange={e => console.log(e.target.value)}
-                />
-                <Toggle
-                    id="two"
-                    label="Label text"
-                />
-                <Toggle
-                    id="three"
-                    label="Label text"
-                    size="large"
-                    enabledText="On"
-                    disabledText="Off"
-                />
-                <Toggle
-                    id="four"
-                    label="Label text"
-                    size="large"
-                    enabledText="Ready"
-                    disabledText="Not Ready"
-                    color="green"
-                />
-            </div>
-        )
-    }
-}
+import React, { useState } from 'react'
 
 export default function Toggle (props) {
     let className = 'toggle'
@@ -78,5 +74,3 @@ export default function Toggle (props) {
         </form>
     )
 }
-
-render(<App />, document.querySelector('#root'))
