@@ -31,35 +31,55 @@
 
 import React from 'react'
 
-export default function Input (props) {
-    let inputClass = props.className ? `form__input ${props.className}` : "form__input"
-    let readOnly = false
-    let hasSides = false
-    if (props.left || props.right) hasSides = true
-    if (props.readOnly && props.readOnly != 'false') readOnly = true
-    if (readOnly) inputClass += ' has-value'
-    return (
-        <div className={hasSides ? "form__item has-action" : "form__item"}>
-            {props.left ? <div className="form__action">{props.left}</div> : null}
+export default class Input extends React.Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+            hasValue: false,
+            hasFocus: false,
+        }
+    }
 
-            <div className="form__input-wrapper">
-                <input
-                    {...props}
-                    name={props.name}
-                    readOnly={readOnly}
-                    id={props.id}
-                    type={props.type || 'text'}
-                    className={inputClass}
-                    onChange={e => {
-                        if (props.onChange) props.onChange(e)
-                    }}
-                />
-                <label htmlFor={props.id} className="form__label">{props.label}</label>
+    render () {
+        let inputClass = this.props.className ? `form__input ${this.props.className}` : "form__input"
+        let readOnly = false
+        let hasSides = false
+        if (this.props.left || this.props.right) hasSides = true
+        if (this.props.readOnly && this.props.readOnly != 'false') readOnly = true
+        if (readOnly) inputClass += ' has-value'
+        if (this.state.hasFocus) inputClass += ' has-focus'
+        if (this.state.hasValue) inputClass += ' has-value'
+        return (
+            <div className={hasSides ? "form__item has-action" : "form__item"}>
+                {this.props.left ? <div className="form__action">{this.props.left}</div> : null}
+
+                <div className="form__input-wrapper">
+                    <input
+                        {...this.props}
+                        name={this.props.name}
+                        readOnly={readOnly}
+                        id={this.props.id}
+                        type={this.props.type || 'text'}
+                        className={inputClass}
+                        onChange={e => {
+                            if (e.target.value != '') this.setState({hasValue: true})
+                            else this.setState({hasValue: false})
+                            if (this.props.onChange) this.props.onChange(e)
+                        }}
+                        onFocus={e => {
+                            this.setState({hasFocus: true})
+                        }}
+                        onBlur={e => {
+                            this.setState({hasFocus: false})
+                        }}
+                    />
+                    <label htmlFor={this.props.id} className="form__label">{this.props.label}</label>
+                </div>
+
+                {this.props.right ? <div className="form__action">{this.props.right}</div> : null}
+
+                <p className="form__description">{this.props.description}</p>
             </div>
-
-            {props.right ? <div className="form__action">{props.right}</div> : null}
-
-            <p className="form__description">{props.description}</p>
-        </div>
-    )
+        )
+    }
 }
