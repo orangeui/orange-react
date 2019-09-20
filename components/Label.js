@@ -10,6 +10,8 @@
  *         that you can listen to when clicked using onClick={})
  *     icon="your-icon-name"
  *     size="small" OR size="pill" OR size="dot"
+ *     id="your-id"
+ *     className="your-custom-class"
  *
  * Examples:
  *     <Avatar circle color="red" size="large" />
@@ -28,8 +30,9 @@ export default function Label (props) {
     }
     if (props.size) className += ` label--${props.size}`
     if (props.icon) icon = <i className={`icon-${props.icon}`}></i>
+    if (props.className) className += ` ${props.className}`
     return (
-        <span {...props} className={className} onClick={e => {
+        <span {...props} className={className} id={props.id} onClick={e => {
             if (props.onClick) props.onClick(e)
         }}>
             {props.children} {icon}
